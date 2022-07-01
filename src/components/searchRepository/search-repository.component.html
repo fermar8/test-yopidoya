@@ -1,0 +1,40 @@
+<div class="title">
+ <h3>Find a Repository</h3>
+</div>
+
+<form [formGroup]="formSearch" (submit)="search()">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <label for="username">Username</label>
+        <input type="text" id="username" formControlName="username" (ngModelChange)="onChangeUsername($event)"
+          placeholder="Insert username...">
+      </div>
+      <div class="col-sm-4">
+        <label for="repository">Repository</label>
+        <input type="text" id="repository" formControlName="repository" (ngModelChange)="onChangeRepository($event)"
+          placeholder="Insert repository name...">
+      </div>
+      <div class="col-sm-4">
+        <button [disabled]="!formSearch.valid" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<table class="table" [hidden]="!repositories">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Contributor</th>
+      <th scope="col">Total contributions</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let repository of repositories; let i=index">
+    <tr>
+      <th scope="row">{{i+1}}</th>
+      <td>{{repository.author.login}}</td>
+      <td>{{repository.total}}</td>
+    </tr>
+  </tbody>
+</table>

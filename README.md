@@ -1,27 +1,65 @@
-# TestYopidoya
+Candidate Exercise / Full-stack Web Developer for Yopidoya
+Max. duration: 48 hours
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
+Exercice 1: Highest Occurrence
+Write a function called highestOccurrence. Given an array of string and/or number, this function should return the array item with the highest frequency. The time complexity of the solution should be inferior or equal to O(n).
 
-## Development server
+Signature:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+type highestOccurrence = (input: Array<string | number>) => Array<string | number>;
+Example:
 
-## Code scaffolding
+highestOccurrence([2, 3, 2, 2, 2, 4, 2]);
+// [2]
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+highestOccurrence([2, 3, 2, 3, 2, 3, 4]);
+// [2, 3]
 
-## Build
+highestOccurrence(['a', 'b', 'c', 'a', 'a', 'a', 'a']);
+// ['a']
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+highestOccurrence(['a', 'a', 2, 2, 2, 'a', 4]);
+// ['a', 2]
+Exercice 2: Maximum Sub Array Sum
+Write a function called maxSubarraySum which accepts an array of integers and a number called n. The function should calculate the maximum sum of n consecutive elements in the array. The time complexity of the solution should be inferior or equal to O(n).
 
-## Running unit tests
+Signature:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+type maxSubarraySum = (input: Array<number>, num: number) => number;
+Example:
 
-## Running end-to-end tests
+maxSubarraySum([1,2,5,2,8,1,5], 4)
+// 17
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+maxSubarraySum([1,2,5,2,8,1,5], 2)
+// 10
 
-## Further help
+maxSubarraySum([4,2,1,6], 1)
+// 6
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+maxSubarraySum([4,2,1,6,2], 4)
+// 13
+
+maxSubarraySum([], 4)
+// null
+Exercice 3: Average Pair
+Write a function called averagePair. Given a sorted array of integers and a target average, determine if there is a pair of values in the array where the average of the pair equals the target average. There may be more than one pair that matches the average target. The time complexity of the solution should be inferior or equal to O(n).
+
+Signature:
+
+type averagePair = (input: Array<number>, target: number) => boolean;
+Example:
+
+averagePair([1,2,3], 2.5)
+// true
+
+averagePair([1,3,3,5,6,7,10,12,19], 8)
+// true
+
+averagePair([-1,0,3,4,5,6], 4.1)
+// false
+
+averagePair([], 4)
+// false
+Exercice 4: Contributors List
+By using the GitHub REST API, build an application (preferably using Angular with TypeScript) that allows a user to list the contributors of a given repository. No other requirement: show us your skills!

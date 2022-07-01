@@ -1,0 +1,13 @@
+form, input, label, button, table {
+    margin: 16px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
